@@ -1,0 +1,45 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "body-parser/body-parser.d.ts": {
+      "commit": "304a25197990aeabf8e9fd030ad927ed011b9e83"
+    },
+    "mime/mime.d.ts": {
+      "commit": "563b64359d06907fb83c1b2367f9fd5b970d5ad7"
+    },
+    "cookie-parser/cookie-parser.d.ts": {
+      "commit": "304a25197990aeabf8e9fd030ad927ed011b9e83"
+    },
+    "debug/debug.d.ts": {
+      "commit": "304a25197990aeabf8e9fd030ad927ed011b9e83"
+    },
+    "morgan/morgan.d.ts": {
+      "commit": "304a25197990aeabf8e9fd030ad927ed011b9e83"
+    },
+    "express/express.d.ts": {
+      "commit": "563b64359d06907fb83c1b2367f9fd5b970d5ad7"
+    },
+    "node/node.d.ts": {
+      "commit": "563b64359d06907fb83c1b2367f9fd5b970d5ad7"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "563b64359d06907fb83c1b2367f9fd5b970d5ad7"
+    },
+    "passport/passport.d.ts": {
+      "commit": "563b64359d06907fb83c1b2367f9fd5b970d5ad7"
+    },
+    "bcrypt/bcrypt.d.ts": {
+      "commit": "563b64359d06907fb83c1b2367f9fd5b970d5ad7"
+    },
+    "express-session/express-session.d.ts": {
+      "commit": "563b64359d06907fb83c1b2367f9fd5b970d5ad7"
+    },
+    "passport-local/passport-local.d.ts": {
+      "commit": "563b64359d06907fb83c1b2367f9fd5b970d5ad7"
+    }
+  }
+}
