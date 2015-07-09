@@ -9,8 +9,6 @@ var passport = require('passport');
 var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 
-
-//TEST
 var app = express();
 
 // view engine setup
@@ -67,6 +65,5 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 module.exports = app;
