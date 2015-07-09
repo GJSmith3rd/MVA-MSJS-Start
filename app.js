@@ -6,9 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
-var api = require('./routes/api'); 
+var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 
+
+//TEST
 var app = express();
 
 // view engine setup
