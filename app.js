@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
+
 var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 
@@ -25,11 +26,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/auth', authenticate);
 app.use('/api', api);
+app.use('/auth', authenticate);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
