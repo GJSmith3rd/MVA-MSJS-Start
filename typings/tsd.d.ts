@@ -10,3 +10,4 @@
 /// <reference path="bcrypt/bcrypt.d.ts" />
 /// <reference path="express-session/express-session.d.ts" />
 /// <reference path="passport-local/passport-local.d.ts" />
+/// <reference path="mongoose/mongoose.d.ts" />

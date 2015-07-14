@@ -3,7 +3,7 @@
 var express = require('express');
 var router = express.Router();
 
-//custom router handler
+//MIDDLEWARE - custom router handler
 router.use(function (req, res, next) {
     if (req.method === "GET") {
         //all continue to next middleware or request handler

@@ -1,4 +1,5 @@
 /// <reference path="typings/tsd.d.ts"/>
+
 var LocalStrategy = require('passport-local').Strategy;
 var bCrypt = require('bcrypt-nodejs');
 //temporary data store
