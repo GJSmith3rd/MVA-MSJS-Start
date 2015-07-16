@@ -23,6 +23,19 @@
 	"args": ["bin/www.js"]
 }
 
+// A task runner that starts Google Chrome (or creates a new window in existing browser session) with the current file.
+// {
+// 	"version": "0.1.0",
+// 	"linux": {
+// 		"command": "google-chrome"
+// 		},
+// 	"isShellCommand": false,
+// 	"showOutput": "never",
+// 	"args": [
+// 		"${file}"
+// 		]
+// }
+
 // A task runner that runs npm default start script
 // {
 // 	"version": "0.1.0",

@@ -5,6 +5,8 @@ var User = mongoose.model('User');
 var LocalStrategy = require('passport-local').Strategy;
 var bCrypt = require('bcrypt-nodejs');
 
+
+
 module.exports = function (passport) {
 
 	// Passport needs to be able to serialize and deserialize users to support persistent login sessions

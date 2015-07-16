@@ -11,3 +11,7 @@
 /// <reference path="express-session/express-session.d.ts" />
 /// <reference path="passport-local/passport-local.d.ts" />
 /// <reference path="mongoose/mongoose.d.ts" />
+/// <reference path="angularjs/angular.d.ts" />
+/// <reference path="jquery/jquery.d.ts" />
+/// <reference path="bootstrap/bootstrap.d.ts" />
+/// <reference path="mongodb/mongodb.d.ts" />
