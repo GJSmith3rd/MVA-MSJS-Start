@@ -17,7 +17,6 @@ var mongoose = require('mongoose');
 
 //connect to mongodb with mongoose ODM driver
 mongoose.connect('mongodb://localhost:27017/chirp-test');
-require('./models/models.js');
 
 var app = express();
 
@@ -49,8 +48,6 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-//initialize models before passport init
-//access mongodb models
 require('./models/models');
 
 // Initialize Passport

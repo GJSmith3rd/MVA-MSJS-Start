@@ -28,10 +28,10 @@ module.exports = function (passport) {
     });
 
     //deserialize and return user object
-    passport.deserializeUser(function (username, done) {
-        
+    passport.deserializeUser(function (id, done) {
+
         //return unique id for user
-        User.findById(username, function (err, user) {
+        User.findById(id, function (err, user) {
 
             console.log('deserializing user:', user.username);
             done(err, user);
@@ -95,6 +95,7 @@ module.exports = function (passport) {
         function (req, username, password, done) {
 
             User.findOne({ username: username }, function (err, user) {
+
                 // In case of any error, return using the done method
                 if (err) {
                     console.log('Error in login: ' + err);
@@ -103,15 +104,17 @@ module.exports = function (passport) {
 
                 if (!user) {
                     //User not signed up
-                    return done('user ' + username + ' not found!', false);
+                    console.log('User Not Found with username '+username);
+                    return done(null, false);
                 }
 
                 if (!isValidPassword(user, password)) {
                     //wrong password
-                    return done('incorrect password ', false);
+                    console.log('Invalid Password');
+                    return done(null, false);
                 }
 
-                return done(null, true);
+                return done(null, user);
             });
         }
         ));
