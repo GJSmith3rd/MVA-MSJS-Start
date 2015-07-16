@@ -1,4 +1,4 @@
-/// <reference path="typings/tsd.d.ts"/>
+/// <reference path="./typings/tsd.d.ts"/>
 
 var express = require('express');
 var path = require('path');
@@ -9,14 +9,15 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 
+//initialize mongoose schemas
+require('./models/models');
 var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 
-//instantiate to mongodb
 var mongoose = require('mongoose');
-
-//connect to mongodb with mongoose ODM driver
-mongoose.connect('mongodb://localhost:27017/chirp-test');
+//add for Mongo support
+mongoose.connect('mongodb://localhost/test-chirp');
+//connect to Mongo
 
 var app = express();
 
@@ -28,29 +29,26 @@ app.set('view engine', 'ejs');
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(session({
-  secret: 'super-duper-secret'
+    secret: 'keyboard cat'
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/api', api);
 app.use('/auth', authenticate);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
-require('./models/models');
-
-// Initialize Passport
+//// Initialize Passport
 var initPassport = require('./passport-init');
 initPassport(passport);
 
@@ -59,7 +57,7 @@ initPassport(passport);
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
@@ -70,12 +68,13 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
         error: {}
     });
 });
+
 
 module.exports = app;
