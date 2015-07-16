@@ -12,6 +12,13 @@ var passport = require('passport');
 var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 
+//instantiate to mongodb
+var mongoose = require('mongoose');
+
+//connect to mongodb with mongoose ODM driver
+mongoose.connect('mongodb://localhost:27017/chirp-test');
+require('./models/models.js');
+
 var app = express();
 
 // view engine setup
@@ -42,7 +49,11 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-//// Initialize Passport
+//initialize models before passport init
+//access mongodb models
+require('./models/models');
+
+// Initialize Passport
 var initPassport = require('./passport-init');
 initPassport(passport);
 
